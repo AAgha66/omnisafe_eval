@@ -1,4 +1,4 @@
-import argparse
+import clearml
 from omnisafe.common.experiment_grid import ExperimentGrid
 from omnisafe.utils.exp_grid_tools import train
 
@@ -35,14 +35,13 @@ def main(env: str, algo: str, seed: int):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--seed", type=int)
-    parser.add_argument("--env", type=str)
-    parser.add_argument("--algo", type=str)
-    args = parser.parse_args()
-    print(args)
+    task = clearml.Task.init()
+    task_logger = task.get_logger()
+    task_params = task.get_parameters_as_dict(cast=True)
+    d = task_params["internal"]
+    print(d)
     main(
-        seed=args.seed,
-        env=args.env,
-        algo=args.algo,
+        seed=d["seed"],
+        env=d["env"],
+        algo=d["algo"],
     )
