@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "Running setup script."
-
+source /root/venv/bin/activate
+pip install clearml
 # go to the repo directory
 cd $CLEARML_GIT_ROOT
 
