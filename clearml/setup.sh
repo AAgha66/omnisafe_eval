@@ -7,7 +7,7 @@ cd $CLEARML_GIT_ROOT
 # now we need to tell clearml to use the python from our poetry env
 # this is in the general case (we use the system python above, so we could
 # have just hardcoded this as well)
-export venv_python_path="root/venv/bin/python"
+export venv_python_path="/root/venv/bin/python"
 echo "Detected poetry python: $venv_python_path"
 cat > $CLEARML_CUSTOM_BUILD_OUTPUT << EOL
 {
