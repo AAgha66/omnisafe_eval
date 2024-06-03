@@ -22,7 +22,7 @@ def main(env: str, algo: str, seed: int):
 
     # total experiment num must can be divided by num_pool
     # meanwhile, users should decide this value according to their machine
-    eg.run(train, num_pool=1, gpu_id=gpu_id, parent_dir="/home/omnisafe")
+    eg.run(train, num_pool=1, gpu_id=gpu_id)
 
     # just fill in the name of the parameter of which value you want to compare.
     # then you can specify the value of the parameter you want to compare,
